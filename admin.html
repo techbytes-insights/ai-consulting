@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — TechBytes Insights</title>
+  <meta name="robots" content="noindex, nofollow"/>
+
+  <style>
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(./fonts/files/jetbrains-mono-400.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(./fonts/files/jetbrains-mono-500.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(./fonts/files/outfit-300.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(./fonts/files/outfit-400.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(./fonts/files/outfit-500.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(./fonts/files/outfit-600.woff2) format('woff2');
+    }
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(./fonts/files/playfair-display-600.woff2) format('woff2');
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F7FC;
+      --surface: #FFFFFF;
+      --surface2: #F3EFFF;
+      --accent: #6241F5;
+      --accent-text: #4C33BF;
+      --accent-dim: rgba(98,65,245,0.08);
+      --border: #E5E1F5;
+      --border2: #D8D2F0;
+      --text: #1A1345;
+      --text2: #5C5A72;
+      --text3: #78748F;
+      --danger: #B3261E;
+      --danger-dim: rgba(179,38,30,0.08);
+      --shadow-md: 0 10px 30px rgba(26,19,69,0.10);
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent-text);
+      outline-offset: 3px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--surface);
+    }
+    .brand { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; }
+    .brand span { color: var(--accent-text); }
+    .brand-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent-text); margin-top: 2px;
+    }
+    #signOutBtn {
+      display: none;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+      background: none; border: 1px solid var(--border2); color: var(--text2);
+      padding: 9px 16px; cursor: pointer; font-family: inherit;
+      transition: all 0.2s;
+    }
+    #signOutBtn:hover { border-color: var(--accent); color: var(--accent-text); }
+
+    main { max-width: 1000px; margin: 0 auto; padding: 64px 32px; }
+
+    /* LOGIN */
+    #loginView {
+      max-width: 380px; margin: 60px auto 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 40px;
+    }
+    #loginView h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 600; margin-bottom: 8px;
+    }
+    #loginView p { font-size: 14px; color: var(--text2); margin-bottom: 24px; }
+    .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .field label {
+      font-size: 12px; color: var(--text2);
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .field input {
+      background: var(--bg);
+      border: 1px solid var(--border2);
+      color: var(--text);
+      padding: 12px 14px;
+      font-size: 16px;
+      font-family: 'Outfit', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .field input:focus { border-color: var(--accent); outline: none; }
+    .btn-primary {
+      width: 100%;
+      background: var(--accent);
+      color: #FFFFFF;
+      border: none;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 13px 22px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-text); }
+    .btn-primary[disabled] { opacity: 0.6; cursor: not-allowed; }
+    #loginError {
+      display: none;
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 16px;
+    }
+    #loginError.visible { display: block; }
+
+    /* SUBMISSIONS */
+    #submissionsView { display: none; }
+    .submissions-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+    }
+    .submissions-head h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px; font-weight: 600;
+    }
+    #refreshBtn {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+      background: var(--accent-dim); border: 1px solid var(--border); color: var(--accent-text);
+      padding: 9px 16px; cursor: pointer; font-family: inherit;
+      transition: all 0.2s;
+    }
+    #refreshBtn:hover { background: var(--accent); color: #FFFFFF; }
+    #refreshBtn[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+    .tabs {
+      display: flex; gap: 8px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .tab-btn {
+      font-family: inherit;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+      background: none; border: none; cursor: pointer;
+      color: var(--text2);
+      padding: 10px 4px;
+      margin-bottom: -1px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .tab-btn:hover { color: var(--accent-text); }
+    .tab-btn.active { color: var(--accent-text); border-bottom-color: var(--accent); }
+
+    .submission-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+    .submission-top {
+      display: flex; align-items: baseline; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px;
+      margin-bottom: 10px;
+    }
+    .submission-name { font-size: 16px; font-weight: 600; }
+    .submission-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: var(--text3); letter-spacing: 0.5px;
+    }
+    .submission-meta { font-size: 13px; color: var(--text2); margin-bottom: 10px; }
+    .submission-meta a { color: var(--accent-text); }
+    .submission-message { font-size: 14px; color: var(--text); line-height: 1.6; white-space: pre-wrap; margin-bottom: 16px; }
+
+    .submission-actions {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .status-select {
+      font-family: inherit;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+      padding: 8px 10px;
+      border: 1px solid var(--border2);
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .status-select.status-new { color: var(--text2); }
+    .status-select.status-contacted { color: #9A6B00; }
+    .status-select.status-qualified { color: var(--accent-text); }
+    .status-select.status-won { color: #1E7B34; }
+    .status-select.status-lost { color: var(--danger); }
+
+    .action-btn {
+      font-family: inherit;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+      background: none; border: 1px solid var(--border2); color: var(--text2);
+      padding: 8px 14px; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .action-btn:hover { border-color: var(--accent); color: var(--accent-text); }
+    .action-btn.danger:hover { border-color: var(--danger); color: var(--danger); background: var(--danger-dim); }
+    .action-btn[disabled] { opacity: 0.6; cursor: not-allowed; }
+    .action-spacer { flex: 1; }
+    .notes-count { font-size: 12px; color: var(--text3); }
+
+    .notes-panel { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .notes-panel.open { display: block; }
+    .notes-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .note-item { background: var(--surface2); padding: 10px 12px; font-size: 13px; color: var(--text); }
+    .note-item .note-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; color: var(--text3); letter-spacing: 0.5px;
+      display: block; margin-bottom: 4px;
+    }
+    .notes-empty { font-size: 13px; color: var(--text3); margin-bottom: 14px; }
+    .note-form { display: flex; gap: 8px; align-items: flex-start; }
+    .note-form textarea {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border2);
+      color: var(--text);
+      padding: 10px 12px;
+      font-size: 14px;
+      font-family: 'Outfit', sans-serif;
+      resize: vertical;
+      min-height: 40px;
+    }
+    .note-form textarea:focus { border-color: var(--accent); outline: none; }
+
+    #emptyState, #loadError {
+      text-align: center;
+      color: var(--text2);
+      font-size: 14px;
+      padding: 60px 0;
+      display: none;
+    }
+    #loadError { color: var(--danger); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <div class="brand">TechBytes <span>Insights</span></div>
+      <div class="brand-sub">// Admin</div>
+    </div>
+    <button type="button" id="signOutBtn">Sign Out</button>
+  </header>
+
+  <main>
+    <section id="loginView">
+      <h1>Admin Access</h1>
+      <p>Enter the admin password to view contact form submissions.</p>
+      <form id="loginForm">
+        <div class="field">
+          <label for="passwordInput">Password</label>
+          <input type="password" id="passwordInput" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn-primary" id="loginBtn">Sign In</button>
+        <p id="loginError">Incorrect password. Please try again.</p>
+      </form>
+    </section>
+
+    <section id="submissionsView">
+      <div class="submissions-head">
+        <h1>Contact Submissions</h1>
+        <button type="button" id="refreshBtn">Refresh</button>
+      </div>
+      <div class="tabs">
+        <button type="button" class="tab-btn active" data-tab="active">Active</button>
+        <button type="button" class="tab-btn" data-tab="archived">Archive</button>
+      </div>
+      <div id="submissionsList"></div>
+      <p id="emptyState">No submissions here.</p>
+      <p id="loadError">Could not load submissions. Try refreshing.</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var INSFORGE_URL = 'https://3yrxnu7x.eu-central.insforge.app';
+      var SESSION_KEY = 'tbiAdminPassword';
+      var STATUSES = ['new', 'contacted', 'qualified', 'won', 'lost'];
+      var STATUS_LABELS = { new: 'New', contacted: 'Contacted', qualified: 'Qualified', won: 'Won', lost: 'Lost' };
+
+      var loginView = document.getElementById('loginView');
+      var submissionsView = document.getElementById('submissionsView');
+      var loginForm = document.getElementById('loginForm');
+      var passwordInput = document.getElementById('passwordInput');
+      var loginBtn = document.getElementById('loginBtn');
+      var loginError = document.getElementById('loginError');
+      var signOutBtn = document.getElementById('signOutBtn');
+      var refreshBtn = document.getElementById('refreshBtn');
+      var submissionsList = document.getElementById('submissionsList');
+      var emptyState = document.getElementById('emptyState');
+      var loadError = document.getElementById('loadError');
+      var tabBtns = document.querySelectorAll('.tab-btn');
+
+      var currentTab = 'active';
+      var notesCache = {}; // id -> notes array
+      var openNotes = {}; // id -> bool
+
+      function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.textContent = str == null ? '' : String(str);
+        return div.innerHTML;
+      }
+
+      function formatDate(iso) {
+        try {
+          return new Date(iso).toLocaleString();
+        } catch (e) {
+          return iso;
+        }
+      }
+
+      function getPassword() {
+        return sessionStorage.getItem(SESSION_KEY);
+      }
+
+      function callAdmin(action, params) {
+        var password = getPassword();
+        if (!password) return Promise.reject({ unauthorized: true });
+
+        var payload = Object.assign({ password: password, action: action }, params || {});
+        return fetch(INSFORGE_URL + '/functions/admin-submissions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          if (res.status === 401) return Promise.reject({ unauthorized: true });
+          if (!res.ok) return Promise.reject({ requestFailed: true });
+          return res.json();
+        });
+      }
+
+      function statusOptionsHtml(current) {
+        return STATUSES.map(function (s) {
+          return '<option value="' + s + '"' + (s === current ? ' selected' : '') + '>' + STATUS_LABELS[s] + '</option>';
+        }).join('');
+      }
+
+      function renderNotes(id) {
+        var panel = submissionsList.querySelector('.notes-panel[data-id="' + id + '"]');
+        if (!panel) return;
+        var listEl = panel.querySelector('.notes-list');
+        var emptyEl = panel.querySelector('.notes-empty');
+        var notes = notesCache[id] || [];
+
+        listEl.innerHTML = '';
+        if (notes.length === 0) {
+          emptyEl.style.display = 'block';
+        } else {
+          emptyEl.style.display = 'none';
+          notes.forEach(function (n) {
+            var item = document.createElement('div');
+            item.className = 'note-item';
+            item.innerHTML = '<span class="note-date">' + escapeHtml(formatDate(n.created_at)) + '</span>' + escapeHtml(n.note);
+            listEl.appendChild(item);
+          });
+        }
+      }
+
+      function loadNotes(id) {
+        return callAdmin('notes', { id: id }).then(function (body) {
+          notesCache[id] = body.notes || [];
+          renderNotes(id);
+        });
+      }
+
+      function renderSubmissions(rows) {
+        submissionsList.innerHTML = '';
+        emptyState.style.display = 'none';
+        loadError.style.display = 'none';
+
+        if (!rows || rows.length === 0) {
+          emptyState.textContent = currentTab === 'archived' ? 'No archived submissions.' : 'No submissions yet.';
+          emptyState.style.display = 'block';
+          return;
+        }
+
+        rows.forEach(function (row) {
+          var card = document.createElement('div');
+          card.className = 'submission-card';
+          card.setAttribute('data-id', row.id);
+
+          var notesOpen = !!openNotes[row.id];
+          var archiveLabel = currentTab === 'archived' ? 'Restore' : 'Archive';
+
+          card.innerHTML =
+            '<div class="submission-top">' +
+              '<div class="submission-name">' + escapeHtml(row.name) + (row.company ? ' — ' + escapeHtml(row.company) : '') + '</div>' +
+              '<div class="submission-date">' + escapeHtml(formatDate(row.created_at)) + '</div>' +
+            '</div>' +
+            '<div class="submission-meta"><a href="mailto:' + escapeHtml(row.email) + '">' + escapeHtml(row.email) + '</a></div>' +
+            '<div class="submission-message">' + escapeHtml(row.message) + '</div>' +
+            '<div class="submission-actions">' +
+              '<select class="status-select status-' + row.status + '" data-action="status">' + statusOptionsHtml(row.status) + '</select>' +
+              '<button type="button" class="action-btn" data-action="toggle-notes">Notes</button>' +
+              '<span class="action-spacer"></span>' +
+              '<button type="button" class="action-btn" data-action="archive">' + archiveLabel + '</button>' +
+              '<button type="button" class="action-btn danger" data-action="delete">Delete</button>' +
+            '</div>' +
+            '<div class="notes-panel' + (notesOpen ? ' open' : '') + '" data-id="' + row.id + '">' +
+              '<div class="notes-list"></div>' +
+              '<p class="notes-empty">No notes yet.</p>' +
+              '<form class="note-form" data-action="add-note">' +
+                '<textarea placeholder="Add a note…" rows="2"></textarea>' +
+                '<button type="submit" class="action-btn">Add</button>' +
+              '</form>' +
+            '</div>';
+
+          submissionsList.appendChild(card);
+
+          if (notesOpen) {
+            if (notesCache[row.id]) {
+              renderNotes(row.id);
+            } else {
+              loadNotes(row.id);
+            }
+          }
+        });
+      }
+
+      function loadSubmissions() {
+        refreshBtn.disabled = true;
+        return callAdmin('list', { archived: currentTab === 'archived' })
+          .then(function (body) {
+            renderSubmissions(body.submissions || []);
+          })
+          .finally(function () {
+            refreshBtn.disabled = false;
+          });
+      }
+
+      function showSubmissionsView() {
+        loginView.style.display = 'none';
+        submissionsView.style.display = 'block';
+        signOutBtn.style.display = 'inline-flex';
+        loadError.style.display = 'none';
+        loadSubmissions().catch(function (e) {
+          if (e && e.unauthorized) signOut();
+          else loadError.style.display = 'block';
+        });
+      }
+
+      function signOut() {
+        sessionStorage.removeItem(SESSION_KEY);
+        submissionsView.style.display = 'none';
+        signOutBtn.style.display = 'none';
+        loginView.style.display = 'block';
+        passwordInput.value = '';
+        loginError.classList.remove('visible');
+      }
+
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        sessionStorage.setItem(SESSION_KEY, passwordInput.value);
+        loginBtn.disabled = true;
+        loginError.classList.remove('visible');
+
+        loadSubmissions()
+          .then(function () {
+            loginView.style.display = 'none';
+            submissionsView.style.display = 'block';
+            signOutBtn.style.display = 'inline-flex';
+          })
+          .catch(function (e) {
+            sessionStorage.removeItem(SESSION_KEY);
+            if (e && e.unauthorized) {
+              loginError.textContent = 'Incorrect password. Please try again.';
+            } else {
+              loginError.textContent = 'Something went wrong. Please try again.';
+            }
+            loginError.classList.add('visible');
+          })
+          .finally(function () {
+            loginBtn.disabled = false;
+          });
+      });
+
+      refreshBtn.addEventListener('click', function () {
+        loadSubmissions().catch(function (e) {
+          if (e && e.unauthorized) signOut();
+          else loadError.style.display = 'block';
+        });
+      });
+
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (btn.classList.contains('active')) return;
+          tabBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          currentTab = btn.getAttribute('data-tab');
+          loadSubmissions().catch(function (e) {
+            if (e && e.unauthorized) signOut();
+            else loadError.style.display = 'block';
+          });
+        });
+      });
+
+      signOutBtn.addEventListener('click', signOut);
+
+      // Event delegation for per-card actions
+      submissionsList.addEventListener('change', function (e) {
+        if (e.target.matches('.status-select')) {
+          var card = e.target.closest('.submission-card');
+          var id = card.getAttribute('data-id');
+          var newStatus = e.target.value;
+          e.target.disabled = true;
+          callAdmin('update-status', { id: id, status: newStatus })
+            .then(function () {
+              e.target.className = 'status-select status-' + newStatus;
+            })
+            .catch(function () {
+              loadSubmissions();
+            })
+            .finally(function () {
+              e.target.disabled = false;
+            });
+        }
+      });
+
+      submissionsList.addEventListener('submit', function (e) {
+        if (e.target.matches('.note-form')) {
+          e.preventDefault();
+          var card = e.target.closest('.submission-card');
+          var id = card.getAttribute('data-id');
+          var textarea = e.target.querySelector('textarea');
+          var text = textarea.value.trim();
+          if (!text) return;
+          var btn = e.target.querySelector('button');
+          btn.disabled = true;
+          callAdmin('add-note', { id: id, note: text })
+            .then(function () {
+              textarea.value = '';
+              return loadNotes(id);
+            })
+            .finally(function () {
+              btn.disabled = false;
+            });
+        }
+      });
+
+      submissionsList.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-action]');
+        if (!btn) return;
+        var action = btn.getAttribute('data-action');
+        var card = btn.closest('.submission-card');
+        var id = card.getAttribute('data-id');
+
+        if (action === 'toggle-notes') {
+          var panel = card.querySelector('.notes-panel');
+          var isOpen = panel.classList.toggle('open');
+          openNotes[id] = isOpen;
+          if (isOpen && !notesCache[id]) loadNotes(id);
+          return;
+        }
+
+        if (action === 'archive') {
+          var archiving = currentTab !== 'archived';
+          btn.disabled = true;
+          callAdmin('set-archived', { id: id, archived: archiving })
+            .then(function () {
+              delete notesCache[id];
+              delete openNotes[id];
+              loadSubmissions();
+            })
+            .finally(function () {
+              btn.disabled = false;
+            });
+          return;
+        }
+
+        if (action === 'delete') {
+          if (!window.confirm('Delete this submission permanently? This cannot be undone.')) return;
+          btn.disabled = true;
+          callAdmin('delete', { id: id })
+            .then(function () {
+              delete notesCache[id];
+              delete openNotes[id];
+              loadSubmissions();
+            })
+            .finally(function () {
+              btn.disabled = false;
+            });
+        }
+      });
+
+      if (getPassword()) {
+        showSubmissionsView();
+      }
+    })();
+  </script>
+
+</body>
+</html>
