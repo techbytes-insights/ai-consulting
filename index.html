@@ -23,8 +23,89 @@
   <meta name="twitter:description" content="Precision AI strategy, custom software engineering, and technology consulting for organisations ready to lead in the age of artificial intelligence."/>
   <meta name="twitter:image" content="https://techbytesinsights.com/og-image.png"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
+    /* Self-hosted fonts (no third-party requests to Google servers) */
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(./fonts/files/jetbrains-mono-400.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'JetBrains Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(./fonts/files/jetbrains-mono-500.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: url(./fonts/files/outfit-300.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(./fonts/files/outfit-400.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(./fonts/files/outfit-500.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(./fonts/files/outfit-600.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(./fonts/files/playfair-display-400.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(./fonts/files/playfair-display-500.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(./fonts/files/playfair-display-600.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Playfair Display';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(./fonts/files/playfair-display-700.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -599,6 +680,54 @@
     .delay-3 { animation-delay: 0.4s; opacity: 0; }
     .delay-4 { animation-delay: 0.55s; opacity: 0; }
 
+    /* COOKIE NOTICE */
+    .cookie-notice {
+      position: fixed;
+      left: 24px; right: 24px; bottom: 24px;
+      max-width: 620px;
+      margin: 0 auto;
+      background: rgba(13,19,32,0.97);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      padding: 28px 32px;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+      transform: translateY(140%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    .cookie-notice.visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .cookie-notice-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .cookie-notice-text {
+      font-size: 13px; color: var(--text2);
+      line-height: 1.7; font-weight: 300;
+    }
+    .cookie-notice-actions { display: flex; justify-content: flex-end; }
+    .cookie-btn-accept {
+      display: inline-flex; align-items: center;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 12px; font-weight: 600;
+      padding: 11px 26px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: background 0.2s;
+    }
+    .cookie-btn-accept:hover { background: var(--gold-light); }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
@@ -615,6 +744,7 @@
       .yt-right { padding: 40px 32px; }
       .li-feature { grid-template-columns: 1fr; padding: 48px 32px; gap: 32px; }
       .li-btns { flex-direction: row; flex-wrap: wrap; }
+      .cookie-notice { left: 16px; right: 16px; bottom: 16px; padding: 22px 24px; }
     }
   </style>
 </head>
@@ -912,6 +1042,41 @@
       </div>
     </div>
   </footer>
+
+  <!-- COOKIE NOTICE -->
+  <div class="cookie-notice" id="cookieNotice" role="dialog" aria-live="polite" aria-label="Cookie and privacy notice">
+    <div class="cookie-notice-title">// Privacy Notice</div>
+    <p class="cookie-notice-text">
+      This site runs on self-hosted assets only — no tracking, advertising, or analytics cookies are set. If that ever changes, we'll ask for your consent here first.
+    </p>
+    <div class="cookie-notice-actions">
+      <button type="button" class="cookie-btn-accept" id="cookieAccept">Got it</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var STORAGE_KEY = 'tbiCookieNoticeAck';
+      var ACK_TTL_MS = 180 * 24 * 60 * 60 * 1000; // re-show every 6 months
+      var notice = document.getElementById('cookieNotice');
+      var acceptBtn = document.getElementById('cookieAccept');
+
+      function hasValidAck() {
+        var stored = localStorage.getItem(STORAGE_KEY);
+        var ts = stored ? parseInt(stored, 10) : NaN;
+        return !isNaN(ts) && (Date.now() - ts) < ACK_TTL_MS;
+      }
+
+      if (!hasValidAck()) {
+        setTimeout(function () { notice.classList.add('visible'); }, 700);
+      }
+
+      acceptBtn.addEventListener('click', function () {
+        localStorage.setItem(STORAGE_KEY, Date.now().toString());
+        notice.classList.remove('visible');
+      });
+    })();
+  </script>
 
 </body>
 </html>
