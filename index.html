@@ -540,6 +540,17 @@
       text-align: center;
     }
     .journey-step-result { border-color: var(--accent); background: var(--accent-dim); }
+    .journey-step-milestone { border-color: var(--mesh-orange); background: rgba(245,114,91,0.08); position: relative; }
+    .journey-step-milestone .journey-step-label { color: #B8452F; }
+    .journey-step-milestone .journey-step-title { color: var(--text); font-weight: 500; }
+    .journey-step-milestone::before {
+      content: '★';
+      position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--mesh-orange); color: #FFFFFF;
+      font-size: 11px; line-height: 22px;
+      box-shadow: 0 2px 6px rgba(245,114,91,0.4);
+    }
     .journey-step-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
@@ -1037,7 +1048,7 @@
           <div class="journey-step-title">Excel + Email + Paper + WhatsApp + Manual Work</div>
         </div>
         <div class="journey-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="journey-step">
+        <div class="journey-step journey-step-milestone">
           <div class="journey-step-label">Digitize</div>
           <div class="journey-step-title">Move processes into simple digital systems</div>
         </div>
