@@ -621,15 +621,22 @@
       background: #FFF3DE;
       box-shadow: 0 0 0 3px rgba(232,168,85,0.25);
     }
-    .example-current-tag {
+    .example-step-start {
+      border-color: #8B7259;
+      background: #E7DCCA;
+      box-shadow: 0 0 0 3px rgba(139,114,89,0.3);
+    }
+    .example-current-tag,
+    .example-start-tag {
       position: absolute;
       top: -38px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 2px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-      color: #FFD9B3;
       white-space: nowrap;
     }
+    .example-current-tag { color: #FFD9B3; }
+    .example-start-tag { color: #D8C6AC; }
     .example-step strong {
       display: block;
       font-family: 'Playfair Display', serif;
@@ -1098,7 +1105,13 @@
         <p class="sec-sub">Turning a business idea into a digital business.</p>
 
         <div class="example-flow">
-          <div class="example-step">Business Idea</div>
+          <div class="example-step example-step-start">
+            <div class="example-start-tag">
+              <span>Started From</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M6 13l6 6 6-6"/></svg>
+            </div>
+            <strong>Manual Order Collection</strong>Orders phoned in, scribbled on paper, or lost in WhatsApp chats — tracked by hand in a notebook
+          </div>
           <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
           <div class="example-step"><strong>Digital Presence</strong>Website and digital customer experience</div>
           <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
