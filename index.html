@@ -605,6 +605,7 @@
     .example-panel .example-arrow { color: #FFD9B3; }
     .example-flow { display: flex; align-items: stretch; margin: 48px 0 40px; }
     .example-step {
+      position: relative;
       flex: 1;
       border: 1px solid var(--border);
       background: var(--bg);
@@ -614,6 +615,20 @@
       color: var(--text2);
       line-height: 1.6;
       font-weight: 300;
+    }
+    .example-step-current {
+      border-color: #E8A855;
+      background: #FFF3DE;
+      box-shadow: 0 0 0 3px rgba(232,168,85,0.25);
+    }
+    .example-current-tag {
+      position: absolute;
+      top: -38px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #FFD9B3;
+      white-space: nowrap;
     }
     .example-step strong {
       display: block;
@@ -1089,7 +1104,13 @@
           <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
           <div class="example-step"><strong>Digital Business</strong>Products, information and customer interactions available digitally</div>
           <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="example-step"><strong>Automation</strong>Reducing manual activities where possible</div>
+          <div class="example-step example-step-current">
+            <div class="example-current-tag">
+              <span>Current State</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M6 13l6 6 6-6"/></svg>
+            </div>
+            <strong>Automation</strong>Reducing manual activities where possible
+          </div>
           <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
           <div class="example-step"><strong>AI Opportunities</strong>Introducing AI where it can improve the customer or business experience</div>
         </div>
