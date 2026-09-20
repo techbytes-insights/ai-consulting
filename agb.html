@@ -223,6 +223,18 @@
       transition: all 0.2s;
     }
     .nav-cta:hover { background: var(--accent-text); }
+    .nav-lang {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 1.5px;
+      color: var(--text2);
+      text-decoration: none;
+      margin-right: 18px;
+      transition: color 0.2s;
+    }
+    .nav-lang:hover { color: var(--accent-text); }
+    .nav-lang span { color: var(--text3); }
+    .nav-lang strong { font-weight: 500; color: var(--text); }
 
     .nav-btn {
       display: inline-flex; align-items: center; gap: 7px;
@@ -344,6 +356,7 @@
       <a href="/de/#contact">Kontakt</a>
     </div>
     <div class="nav-actions">
+      <a href="/terms.html" class="nav-lang" data-lang="en" hreflang="en" lang="en" title="English version">EN<span>|</span><strong>DE</strong></a>
       <a href="/de/#contact" class="nav-cta">Gespräch anfragen</a>
     </div>
   </nav>
@@ -514,5 +527,12 @@
   </footer>
 
 
+  <script>
+    document.querySelectorAll('[data-lang]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        try { localStorage.setItem('tbiLang', a.getAttribute('data-lang')); } catch (e) {}
+      });
+    });
+  </script>
 </body>
 </html>
