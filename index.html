@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TechBytes Insights — Digitize Your Business & Transform It With AI</title>
-  <meta name="description" content="We help small and medium businesses replace manual processes with simple digital solutions, and use AI where it creates real value."/>
+  <title>TechBytes Insights — Digitization, AI, Apps & Language Learning</title>
+  <meta name="description" content="We help small and medium businesses go digital and use AI where it helps, build apps for Google Play and the App Store, and publish Parallel Pages language books and apps."/>
   <link rel="canonical" href="https://techbytesinsights.com/"/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://techbytesinsights.com/"/>
-  <meta property="og:title" content="Digitize Your Business. Transform It With AI."/>
-  <meta property="og:description" content="From Excel, emails and manual work to simple digital processes, automation and practical AI solutions."/>
+  <meta property="og:title" content="Practical Technology. For Business & Learning."/>
+  <meta property="og:description" content="Digitization and AI for small businesses, apps for Google Play and the App Store, and Parallel Pages language books and apps."/>
   <meta property="og:image" content="https://techbytesinsights.com/og-image.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -19,8 +19,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Digitize Your Business. Transform It With AI."/>
-  <meta name="twitter:description" content="From Excel, emails and manual work to simple digital processes, automation and practical AI solutions."/>
+  <meta name="twitter:title" content="Practical Technology. For Business & Learning."/>
+  <meta name="twitter:description" content="Digitization and AI for small businesses, apps for Google Play and the App Store, and Parallel Pages language books and apps."/>
   <meta name="twitter:image" content="https://techbytesinsights.com/og-image.png"/>
 
   <style>
@@ -360,12 +360,12 @@
     .hero .cta-secondary { color: #FFFFFF; border-color: rgba(255,255,255,0.35); }
     .hero .cta-secondary:hover { border-color: #FFFFFF; color: #FFFFFF; background: rgba(255,255,255,0.08); }
 
-    /* Hero right - journey preview panel */
+    /* Hero right - at-a-glance panel */
     .hero-right {
       border: 1px solid var(--border);
       background: var(--surface);
       box-shadow: var(--shadow-md);
-      padding: 44px;
+      padding: 40px 44px;
       position: relative;
     }
     .hero-right::before {
@@ -380,26 +380,37 @@
       letter-spacing: 3px; text-transform: uppercase;
       color: var(--accent-text);
       font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border);
     }
-    .hero-journey { display: flex; flex-direction: column; gap: 4px; }
-    .hero-journey-step {
-      border: 1px solid var(--border);
-      padding: 20px 22px;
-      background: var(--bg);
+    .hero-glance { display: flex; flex-direction: column; }
+    .hero-glance a {
+      display: flex; align-items: center; gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
     }
-    .hero-journey-step-final { border-color: var(--accent); background: var(--accent-dim); }
-    .hero-journey-icon { color: var(--accent-text); margin-bottom: 10px; }
-    .hero-journey-label {
+    .hero-glance a:last-child { border-bottom: 0; padding-bottom: 4px; }
+    .hero-glance a:hover .hero-glance-label { color: var(--accent-text); }
+    .hero-glance-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      border: 1px solid var(--border);
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent-text);
+    }
+    .hero-glance-label {
       font-family: 'Playfair Display', serif;
       font-size: 17px; font-weight: 500;
       color: var(--text);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
+      transition: color 0.2s;
     }
-    .hero-journey-sub { font-size: 12px; color: var(--text2); }
-    .hero-journey-arrow { text-align: center; color: var(--accent-text); font-size: 18px; padding: 2px 0; }
+    .hero-glance-sub { font-size: 12px; color: var(--text2); line-height: 1.5; }
+    .hero-glance-arrow { margin-left: auto; color: var(--accent-text); flex-shrink: 0; }
 
     /* DIVIDER */
     .accent-divider {
@@ -435,44 +446,6 @@
       max-width: 520px;
     }
 
-    /* DOES THIS SOUND FAMILIAR */
-    .familiar-section { padding: 100px 0; }
-    .familiar-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-    .familiar-card {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      box-shadow: var(--shadow-sm);
-      padding: 28px 26px 24px;
-      font-size: 15px;
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.6;
-      font-weight: 300;
-      position: relative;
-    }
-    .familiar-card::before {
-      content: '“';
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-style: normal;
-      font-size: 34px;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .familiar-answer {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 3vw, 34px);
-      font-weight: 500;
-      color: var(--accent-text);
-    }
-
     /* WHAT WE DO */
     .whatwedo-section { padding: 0 0 100px; }
     .whatwedo-grid {
@@ -482,7 +455,7 @@
       background: var(--border);
       border: 1px solid var(--border);
     }
-    .whatwedo-card { background: var(--surface); padding: 48px 44px; }
+    .whatwedo-card { background: var(--surface); padding: 40px 36px 44px; }
     .whatwedo-card-accent { background: var(--surface2); }
     .whatwedo-num {
       font-family: 'JetBrains Mono', monospace;
@@ -499,21 +472,16 @@
     }
     .whatwedo-title {
       font-family: 'Playfair Display', serif;
-      font-size: 24px; font-weight: 500;
+      font-size: 22px; font-weight: 500;
       color: var(--text);
       margin-bottom: 12px;
     }
     .whatwedo-desc {
       font-size: 14px; color: var(--text2);
       line-height: 1.7; font-weight: 300;
-      margin-bottom: 28px;
-      max-width: 380px;
+      margin-bottom: 24px;
     }
-    .whatwedo-list {
-      list-style: none;
-      columns: 2;
-      column-gap: 20px;
-    }
+    .whatwedo-list { list-style: none; }
     .whatwedo-list li {
       font-size: 13px;
       color: var(--text2);
@@ -529,183 +497,60 @@
       color: var(--accent-text);
     }
 
-    /* JOURNEY */
-    .journey-section { padding: 0 0 100px; }
-    .journey-flow { display: flex; align-items: stretch; }
-    .journey-step {
-      flex: 1;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      padding: 32px 24px;
+    .whatwedo-note {
+      margin-top: 28px;
       text-align: center;
-    }
-    .journey-step-result { border-color: var(--accent); background: var(--accent-dim); }
-    .journey-step-milestone { border-color: var(--mesh-orange); background: rgba(245,114,91,0.08); position: relative; }
-    .journey-step-milestone .journey-step-label { color: #B8452F; }
-    .journey-step-milestone .journey-step-title { color: var(--text); font-weight: 500; }
-    .journey-step-milestone::before {
-      content: '★';
-      position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
-      width: 22px; height: 22px; border-radius: 50%;
-      background: var(--mesh-orange); color: #FFFFFF;
-      font-size: 11px; line-height: 22px;
-      box-shadow: 0 2px 6px rgba(245,114,91,0.4);
-    }
-    .journey-step-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--accent-text);
-      margin-bottom: 14px;
-    }
-    .journey-step-title {
-      font-size: 14px; color: var(--text); line-height: 1.55; font-weight: 300;
-    }
-    .journey-step-result .journey-step-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px; font-weight: 500; color: var(--accent-text);
-    }
-    .journey-arrow {
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent-text); font-size: 20px;
-      padding: 0 10px;
-      flex-shrink: 0;
-    }
-
-    /* EXAMPLE (AI-FOODS) */
-    .example-section { padding: 0 0 100px; }
-    .example-panel {
-      border: 1px solid rgba(255,255,255,0.08);
-      background: var(--dark);
-      box-shadow: var(--shadow-md);
-      padding: 72px;
-      position: relative;
-      overflow: hidden;
-    }
-    .example-panel::after {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 70% at 92% 100%, rgba(98,65,245,0.55) 0%, transparent 60%),
-        radial-gradient(ellipse 55% 60% at 5% 0%, rgba(245,114,91,0.35) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 55% at 100% 0%, rgba(173,65,243,0.30) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .example-panel::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--mesh-light) 50%, transparent);
-      z-index: 1;
-    }
-    .example-panel > * { position: relative; z-index: 2; }
-    .example-panel .sec-kicker-text { color: #FFD9B3; }
-    .example-panel .sec-kicker-line { background: rgba(255,255,255,0.45); }
-    .example-panel .sec-title { color: #FFFFFF; }
-    .example-panel .sec-sub { color: rgba(255,255,255,0.75); }
-    .example-panel .example-note { color: #FFD9B3; }
-    .example-panel .example-arrow { color: #FFD9B3; }
-    .example-flow { display: flex; align-items: stretch; margin: 48px 0 40px; }
-    .example-step {
-      position: relative;
-      flex: 1;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      padding: 24px 20px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.6;
-      font-weight: 300;
-    }
-    .example-step-current {
-      border-color: #E8A855;
-      background: #FFF3DE;
-      box-shadow: 0 0 0 3px rgba(232,168,85,0.25);
-    }
-    .example-step-start {
-      border-color: #8B7259;
-      background: #E7DCCA;
-      box-shadow: 0 0 0 3px rgba(139,114,89,0.3);
-    }
-    .example-current-tag,
-    .example-start-tag {
-      position: absolute;
-      top: -38px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 2px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .example-current-tag { color: #FFD9B3; }
-    .example-start-tag { color: #D8C6AC; }
-    .example-step strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 16px; font-weight: 500;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .example-arrow {
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent-text); font-size: 18px; padding: 0 8px; flex-shrink: 0;
-    }
-    .example-note {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 19px;
+      font-size: 18px;
       color: var(--accent-text);
-      margin-bottom: 32px;
-      max-width: 560px;
     }
 
-    /* SIMPLE BUSINESS EXAMPLES */
-    .cases-section { padding: 0 0 100px; }
-    .cases-grid {
+    /* PRODUCTS + LEARN */
+    .more-section { padding: 0 0 100px; }
+    .more-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--border);
+      grid-template-columns: 3fr 2fr;
+      gap: 24px;
+    }
+    .more-panel {
       border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 44px 40px;
+      display: flex; flex-direction: column;
+      box-shadow: var(--shadow-sm);
     }
-    .case-card { background: var(--surface); padding: 36px 36px 40px; }
-    .case-icon { color: var(--accent-text); margin-bottom: 16px; }
-    .case-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 19px; font-weight: 500;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
-    .case-flow { display: flex; flex-direction: column; gap: 0; }
-    .case-step { font-size: 13px; color: var(--text2); line-height: 1.6; font-weight: 300; padding: 4px 0; }
-    .case-step-label {
-      display: inline-block;
+    .more-panel-accent { background: var(--surface2); }
+    .more-kicker {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
       color: var(--accent-text);
-      margin-right: 8px;
-    }
-    .case-step-ai { color: var(--text); }
-    .case-arrow { color: var(--accent-text); font-size: 14px; padding: 2px 0 2px 2px; }
-
-    /* LEARN */
-    .learn-section { padding: 0 0 100px; }
-    .learn-panel {
-      border: 1px solid var(--border);
-      background: var(--surface2);
-      padding: 56px;
-      text-align: center;
-    }
-    .learn-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(22px, 2.6vw, 30px);
-      font-weight: 500;
-      color: var(--text);
       margin-bottom: 14px;
     }
-    .learn-desc {
+    .more-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 2.6vw, 28px);
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .more-desc {
       font-size: 14px; color: var(--text2);
       line-height: 1.7; font-weight: 300;
-      max-width: 460px;
-      margin: 0 auto 28px;
+      margin-bottom: 24px;
+    }
+    .more-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+    .more-tile { border: 1px solid var(--border); background: var(--surface); padding: 16px 18px; }
+    .more-tile-icon { color: var(--accent-text); margin-bottom: 8px; }
+    .more-tile strong { display: block; font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .more-tile span { font-size: 12px; color: var(--text2); line-height: 1.5; }
+    .more-panel .cta-primary, .more-panel .yt-btn { align-self: flex-start; margin-top: auto; }
+    .more-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 1px;
+      color: var(--text3);
+      margin-top: 14px;
     }
     .yt-btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -721,22 +566,6 @@
     }
     .yt-btn:hover { background: #B91C1C; }
 
-    /* ABOUT */
-    .about-section { padding: 0 0 100px; }
-    .about-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-    .about-text {
-      font-size: 16px; color: var(--text2);
-      line-height: 1.8; font-weight: 300;
-      margin-bottom: 24px;
-    }
-    .about-highlight {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 20px;
-      color: var(--accent-text);
-      line-height: 1.5;
-    }
-
     /* CONTACT */
     .contact-section { padding: 0 0 120px; }
     .contact-grid {
@@ -747,6 +576,11 @@
       background: linear-gradient(135deg, var(--surface), var(--surface2));
       box-shadow: var(--shadow-md);
       padding: 64px;
+    }
+    .contact-about {
+      font-size: 15px; color: var(--text2);
+      line-height: 1.75; font-weight: 300;
+      margin: 0 0 20px;
     }
     .contact-checklist { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 12px; }
     .contact-checklist li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--text); font-weight: 300; }
@@ -882,18 +716,10 @@
 
       .whatwedo-grid { grid-template-columns: 1fr; }
       .whatwedo-card { padding: 36px 28px; }
-      .whatwedo-list { columns: 1; }
-
-      .journey-flow { flex-direction: column; }
-      .journey-arrow { transform: rotate(90deg); padding: 6px 0; }
-      .journey-step { text-align: left; }
-
-      .example-panel { padding: 40px 28px; }
-      .example-flow { flex-direction: column; }
-      .example-arrow { transform: rotate(90deg); padding: 6px 0; }
-      .example-step { text-align: left; }
-
-      .cases-grid { grid-template-columns: 1fr; }
+      .more-grid { grid-template-columns: 1fr; }
+      .more-panel { padding: 36px 28px; }
+      .more-tiles { grid-template-columns: 1fr; }
+      .hero-right { padding: 32px 28px; }
 
       .contact-grid { grid-template-columns: 1fr; padding: 40px 28px; gap: 40px; }
 
@@ -916,9 +742,8 @@
     </a>
     <div class="nav-menu">
       <a href="#what-we-do">What We Do</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#example">Success Stories</a>
-      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#learn">Learn</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
@@ -936,40 +761,38 @@
         <div class="hero-left">
           <div class="hero-kicker fade-up">
             <div class="hero-kicker-line"></div>
-            <span class="hero-kicker-text">For Small &amp; Medium Businesses</span>
+            <span class="hero-kicker-text">Digitization · AI · Apps · Language Learning</span>
           </div>
           <h1 class="fade-up delay-1">
-            Digitize Your Business.<br>Transform It With <em>AI</em>.
+            Practical Technology.<br>For Business &amp; <em>Learning</em>.
           </h1>
           <p class="hero-desc fade-up delay-2">
-            From Excel, emails and manual work to simple digital processes, automation and practical AI solutions.
+            We help small and medium businesses go digital and use AI where it truly helps — and we build our own language books and apps for Google Play and the App Store.
           </p>
           <div class="hero-ctas fade-up delay-3">
-            <a href="#contact" class="cta-primary">Discuss Your Business →</a>
-            <a href="#how-it-works" class="cta-secondary">See How It Works</a>
+            <a href="#contact" class="cta-primary">Let's Talk →</a>
+            <a href="#what-we-do" class="cta-secondary">What We Do</a>
           </div>
         </div>
 
         <div class="hero-right fade-up delay-4">
-          <div class="hero-panel-title">// The Transformation</div>
-          <div class="hero-journey">
-            <div class="hero-journey-step">
-              <div class="hero-journey-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h6l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6M9.5 8.5h3"/></svg></div>
-              <div class="hero-journey-label">Manual Business</div>
-              <div class="hero-journey-sub">Excel, email, paper, WhatsApp</div>
-            </div>
-            <div class="hero-journey-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="hero-journey-step">
-              <div class="hero-journey-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="10" rx="1"/><path d="M2 19h20"/><path d="M9 19l1-2h4l1 2"/></svg></div>
-              <div class="hero-journey-label">Digital Business</div>
-              <div class="hero-journey-sub">Simple systems &amp; workflows</div>
-            </div>
-            <div class="hero-journey-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="hero-journey-step hero-journey-step-final">
-              <div class="hero-journey-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg></div>
-              <div class="hero-journey-label">AI-Powered Business</div>
-              <div class="hero-journey-sub">Smarter, faster, easier to manage</div>
-            </div>
+          <div class="hero-panel-title">// At a Glance</div>
+          <div class="hero-glance">
+            <a href="#what-we-do">
+              <div class="hero-glance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="10" rx="1"/><path d="M2 19h20"/><path d="M9 19l1-2h4l1 2"/></svg></div>
+              <div><div class="hero-glance-label">Digitize &amp; Automate</div><div class="hero-glance-sub">From Excel, email and paper to simple digital systems</div></div>
+              <svg class="hero-glance-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#products">
+              <div class="hero-glance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2V5z"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/><path d="M7 7h2M7 11h2M15 7h2M15 11h2"/></svg></div>
+              <div><div class="hero-glance-label">Language Books &amp; Apps</div><div class="hero-glance-sub">Parallel-text stories on paper and on your phone</div></div>
+              <svg class="hero-glance-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#learn">
+              <div class="hero-glance-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg></div>
+              <div><div class="hero-glance-label">Learn With Us</div><div class="hero-glance-sub">Videos that explain digitization and AI in plain words</div></div>
+              <svg class="hero-glance-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
         </div>
       </div>
@@ -978,252 +801,84 @@
 
   <div class="accent-divider"></div>
 
-  <!-- DOES THIS SOUND FAMILIAR -->
-  <section class="familiar-section" id="familiar">
-    <div class="container">
-      <div class="sec-head center">
-        <div class="sec-kicker">
-          <div class="sec-kicker-line"></div>
-          <span class="sec-kicker-text">Sound Familiar?</span>
-        </div>
-        <h2 class="sec-title">Does This Sound Familiar?</h2>
-      </div>
-      <div class="familiar-grid">
-        <div class="familiar-card">We manage everything in Excel.</div>
-        <div class="familiar-card">Too much work is done manually.</div>
-        <div class="familiar-card">We repeatedly enter the same information.</div>
-        <div class="familiar-card">Our employees spend hours preparing reports.</div>
-        <div class="familiar-card">Finding information in our documents takes too long.</div>
-        <div class="familiar-card">Customers keep asking the same questions.</div>
-        <div class="familiar-card">We want to use AI, but don't know where to start.</div>
-      </div>
-      <div class="familiar-answer">We can help.</div>
-    </div>
-  </section>
-
   <!-- WHAT WE DO -->
   <section class="whatwedo-section" id="what-we-do">
     <div class="container">
-      <div class="sec-head">
+      <div class="sec-head center">
         <div class="sec-kicker">
           <div class="sec-kicker-line"></div>
           <span class="sec-kicker-text">What We Do</span>
         </div>
         <h2 class="sec-title">Two Ways We Help</h2>
-        <p class="sec-sub">Most businesses start with one of these two steps — and many need both.</p>
+        <p class="sec-sub">Most businesses start with one of these — and many need both.</p>
       </div>
 
       <div class="whatwedo-grid">
         <div class="whatwedo-card">
           <div class="whatwedo-num">01</div>
           <div class="whatwedo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="10" rx="1"/><path d="M2 19h20"/><path d="M9 19l1-2h4l1 2"/></svg></div>
-          <h3 class="whatwedo-title">Digitize Your Business</h3>
-          <p class="whatwedo-desc">Turn manual business processes into simple digital solutions.</p>
+          <h3 class="whatwedo-title">Digitize &amp; Automate</h3>
+          <p class="whatwedo-desc">Replace Excel, email, paper and WhatsApp with simple digital systems — and remove the repetitive manual work.</p>
           <ul class="whatwedo-list">
-            <li>Online forms</li>
-            <li>Business applications</li>
-            <li>Customer management</li>
-            <li>Booking systems</li>
-            <li>Dashboards</li>
-            <li>Digital workflows</li>
-            <li>Document management</li>
-            <li>System integrations</li>
-            <li>Automated reporting</li>
+            <li>Online forms &amp; booking</li>
+            <li>Customer &amp; document management</li>
+            <li>Dashboards &amp; automated reporting</li>
+            <li>Digital workflows &amp; integrations</li>
+            <li>AI assistants where they genuinely help</li>
           </ul>
         </div>
 
         <div class="whatwedo-card whatwedo-card-accent">
           <div class="whatwedo-num">02</div>
-          <div class="whatwedo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg></div>
-          <h3 class="whatwedo-title">Transform Your Business With AI</h3>
-          <p class="whatwedo-desc">Once your business is digital, we help you use AI where it creates real value.</p>
+          <div class="whatwedo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/><path d="M9 7h6M9 10h4"/></svg></div>
+          <h3 class="whatwedo-title">Build Apps</h3>
+          <p class="whatwedo-desc">Mobile and web apps for your business or your idea — designed, built and published on Google Play and the App Store.</p>
           <ul class="whatwedo-list">
-            <li>AI assistants</li>
-            <li>Customer support assistants</li>
-            <li>Document understanding</li>
-            <li>Smart business search</li>
-            <li>Automatic reporting</li>
-            <li>Email assistance</li>
-            <li>Knowledge assistants</li>
-            <li>Sales assistance</li>
-            <li>Business process automation</li>
+            <li>Android &amp; iOS apps</li>
+            <li>Web applications</li>
+            <li>Store listing &amp; publishing</li>
+            <li>Updates &amp; maintenance</li>
           </ul>
         </div>
       </div>
+
+      <p class="whatwedo-note">You don't need a massive transformation project. Start with one problem.</p>
     </div>
   </section>
 
-  <!-- THE JOURNEY -->
-  <section class="journey-section" id="how-it-works">
+  <!-- PRODUCTS + LEARN -->
+  <section class="more-section" id="products">
     <div class="container">
-      <div class="sec-head center">
-        <div class="sec-kicker">
-          <div class="sec-kicker-line"></div>
-          <span class="sec-kicker-text">How It Works</span>
-        </div>
-        <h2 class="sec-title">The Journey</h2>
-      </div>
-
-      <div class="journey-flow">
-        <div class="journey-step">
-          <div class="journey-step-label">Today</div>
-          <div class="journey-step-title">Excel + Email + Paper + WhatsApp + Manual Work</div>
-        </div>
-        <div class="journey-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="journey-step journey-step-milestone">
-          <div class="journey-step-label">Digitize</div>
-          <div class="journey-step-title">Move processes into simple digital systems</div>
-        </div>
-        <div class="journey-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="journey-step">
-          <div class="journey-step-label">Automate</div>
-          <div class="journey-step-title">Remove repetitive manual work</div>
-        </div>
-        <div class="journey-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="journey-step">
-          <div class="journey-step-label">Add AI</div>
-          <div class="journey-step-title">Use AI to assist employees and customers</div>
-        </div>
-        <div class="journey-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-        <div class="journey-step journey-step-result">
-          <div class="journey-step-label">Result</div>
-          <div class="journey-step-title">A Simpler, Faster &amp; Smarter Business</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXAMPLE: AI-FOODS.DE -->
-  <section class="example-section" id="example">
-    <div class="container">
-      <div class="example-panel">
-        <div class="sec-kicker">
-          <div class="sec-kicker-line"></div>
-          <span class="sec-kicker-text">See It In Action</span>
-        </div>
-        <h2 class="sec-title">AI-Foods.de</h2>
-        <p class="sec-sub">Turning a business idea into a digital business.</p>
-
-        <div class="example-flow">
-          <div class="example-step example-step-start">
-            <div class="example-start-tag">
-              <span>Started From</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M6 13l6 6 6-6"/></svg>
+      <div class="more-grid">
+        <div class="more-panel more-panel-accent">
+          <div class="more-kicker">// Our Products</div>
+          <h2 class="more-title">Language Books &amp; Apps</h2>
+          <p class="more-desc">Under the <strong>Parallel Pages</strong> brand we publish parallel-text story books and read-along apps that help you learn a language naturally — original and translation side by side.</p>
+          <div class="more-tiles">
+            <div class="more-tile">
+              <div class="more-tile-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2V5z"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/><path d="M7 7h2M7 11h2M15 7h2M15 11h2"/></svg></div>
+              <strong>Language Books</strong>
+              <span>Parallel-text stories in print and ebook.</span>
             </div>
-            <strong>Manual Order Collection</strong>Orders phoned in, scribbled on paper, or lost in WhatsApp chats — tracked by hand in a notebook
-          </div>
-          <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="example-step"><strong>Digital Presence</strong>Website and digital customer experience</div>
-          <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="example-step"><strong>Digital Business</strong>Products, information and customer interactions available digitally</div>
-          <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="example-step example-step-current">
-            <div class="example-current-tag">
-              <span>Current State</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M6 13l6 6 6-6"/></svg>
+            <div class="more-tile">
+              <div class="more-tile-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/><path d="M9 7h6M9 10h4"/></svg></div>
+              <strong>Language Apps</strong>
+              <span>Narration with word-by-word highlighting, on Google Play and the App Store.</span>
             </div>
-            <strong>Automation</strong>Reducing manual activities where possible
           </div>
-          <div class="example-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-          <div class="example-step"><strong>AI Opportunities</strong>Introducing AI where it can improve the customer or business experience</div>
+          <a href="https://www.parallelpagespress.shop/" target="_blank" rel="noopener" class="cta-primary">Visit ParallelPagesPress.shop →</a>
         </div>
 
-        <p class="example-note">We don't just talk about digitization and AI. We build with it.</p>
-        <a href="https://www.ai-foods.de/" target="_blank" rel="noopener" class="cta-primary">Explore AI-Foods.de →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIMPLE BUSINESS EXAMPLES -->
-  <section class="cases-section" id="examples">
-    <div class="container">
-      <div class="sec-head center">
-        <div class="sec-kicker">
-          <div class="sec-kicker-line"></div>
-          <span class="sec-kicker-text">A Few Ideas</span>
+        <div class="more-panel" id="learn">
+          <div class="more-kicker">// Learn</div>
+          <h2 class="more-title">Technology, Explained Simply</h2>
+          <p class="more-desc">We explain digitization, AI and modern technology through practical videos and articles — no jargon, no hype.</p>
+          <a href="https://www.youtube.com/@TechBytesExplained" target="_blank" rel="noopener" class="yt-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Watch Videos
+          </a>
+          <p class="more-note">// youtube.com/@TechBytesExplained</p>
         </div>
-        <h2 class="sec-title">What Could This Look Like For Your Business?</h2>
-      </div>
-
-      <div class="cases-grid">
-        <div class="case-card">
-          <div class="case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v8a2 2 0 0 0 4 0V2M8 10v12"/><path d="M16 2c-1.1 0-2 1.3-2 3v4c0 1.1.9 2 2 2v11"/></svg></div>
-          <h3 class="case-title">Restaurant</h3>
-          <div class="case-flow">
-            <div class="case-step"><span class="case-step-label">Before</span>Phone calls and WhatsApp bookings.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step"><span class="case-step-label">Digital</span>Online booking and customer information.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step case-step-ai"><span class="case-step-label">AI</span>Assistant for common customer questions.</div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5 3V10l5 3V10l5 3v8H3z"/><path d="M8 21v-4M13 21v-4M18 21v-4"/></svg></div>
-          <h3 class="case-title">Small Manufacturer</h3>
-          <div class="case-flow">
-            <div class="case-step"><span class="case-step-label">Before</span>Excel + PDFs + emails.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step"><span class="case-step-label">Digital</span>Centralized information and workflows.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step case-step-ai"><span class="case-step-label">AI</span>Employees can quickly find information from company documents.</div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></div>
-          <h3 class="case-title">Real Estate Business</h3>
-          <div class="case-flow">
-            <div class="case-step"><span class="case-step-label">Before</span>Property enquiries handled manually.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step"><span class="case-step-label">Digital</span>Centralized lead and property management.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step case-step-ai"><span class="case-step-label">AI</span>Help categorize enquiries and prepare responses.</div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg></div>
-          <h3 class="case-title">Service Business</h3>
-          <div class="case-flow">
-            <div class="case-step"><span class="case-step-label">Before</span>Appointments and customer information managed manually.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step"><span class="case-step-label">Digital</span>Booking and customer management.</div>
-            <div class="case-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
-            <div class="case-step case-step-ai"><span class="case-step-label">AI</span>Assist with customer communication and follow-ups.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEARN -->
-  <section class="learn-section">
-    <div class="container">
-      <div class="learn-panel">
-        <h2 class="learn-title">Learn With TechBytes Insights</h2>
-        <p class="learn-desc">We also explain digitization, AI and modern technology through practical videos and articles.</p>
-        <a href="https://www.youtube.com/@TechBytesExplained" target="_blank" class="yt-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          Watch Videos
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-inner">
-        <div class="sec-kicker">
-          <div class="sec-kicker-line"></div>
-          <span class="sec-kicker-text">About</span>
-        </div>
-        <h2 class="sec-title">About TechBytes Insights</h2>
-        <p class="about-text">
-          We combine practical software engineering, digitization and AI experience to help businesses in Germany and beyond modernize — one problem at a time.
-        </p>
-        <p class="about-highlight">Technology should solve business problems — not create additional complexity.</p>
       </div>
     </div>
   </section>
@@ -1237,13 +892,13 @@
             <div class="sec-kicker-line"></div>
             <span class="sec-kicker-text">Get Started</span>
           </div>
-          <h2 class="sec-title">Not Sure Where to Start?</h2>
-          <p class="sec-sub">You don't need a massive digital transformation project. Start with one business problem.</p>
-          <p class="contact-help-label">We help identify:</p>
+          <h2 class="sec-title">Let's Talk</h2>
+          <p class="contact-about">TechBytes Insights combines practical software engineering, digitization and AI experience to help businesses in Germany and beyond modernize — one problem at a time. Technology should solve business problems, not create new complexity.</p>
+          <p class="contact-help-label">Tell us about your business and we'll help identify:</p>
           <ul class="contact-checklist">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>What can be digitized</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>What can be automated</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>What can be digitized or automated</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Where AI can genuinely help</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Whether an app is the right next step</li>
           </ul>
         </div>
         <div class="contact-right">
@@ -1275,13 +930,12 @@
       <div class="footer-inner">
         <div>
           <div class="footer-brand">TechBytes <span>Insights</span></div>
-          <div class="footer-copy">© 2026 TechBytes Insights · Business Digitization &amp; AI · Germany</div>
+          <div class="footer-copy">© 2026 TechBytes Insights · Digitization, AI &amp; Apps · Germany</div>
         </div>
         <div class="footer-nav">
           <a href="#what-we-do">What We Do</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#example">Success Stories</a>
-          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#learn">Learn</a>
           <a href="#contact">Contact</a>
         </div>
         <div class="footer-socials">
